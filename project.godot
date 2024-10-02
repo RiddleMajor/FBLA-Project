@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Skibidi"
+config/name="FBLA Project"
 run/main_scene="res://test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
 
 [input]
 
