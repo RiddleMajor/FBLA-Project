@@ -27,10 +27,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("e") and $"../StaticBody3D2".Interact==1:
-		$"../../Control/Label".LabelText="hi im a box"
+	if Input.is_action_just_pressed("e") and $"../../Enviroment/StaticBody3D2".Interact==1:
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/test.dialogue"), "start")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "foward", "back")
