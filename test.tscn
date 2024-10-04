@@ -1,9 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=9 format=3 uid="uid://bf3fjqfxdruql"]
 
-[ext_resource type="Script" path="res://Scripts/Text.gd" id="1_clnmr"]
-[ext_resource type="Script" path="res://Scripts/TalkingBox.gd" id="2_d6rkw"]
 [ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="3_kj1qg"]
-[ext_resource type="Script" path="res://Scripts/RayCastScript.gd" id="4_5v85a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
 
@@ -33,23 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = 156.0
-offset_right = 251.0
-offset_bottom = 228.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
-script = ExtResource("1_clnmr")
-
 [node name="World" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
@@ -72,7 +52,6 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="World/Enviroment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43751, 0.946276, -3.79955)
-script = ExtResource("2_d6rkw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2"]
 shape = SubResource("BoxShape3D_l6oc6")
@@ -96,10 +75,6 @@ script = ExtResource("3_kj1qg")
 [node name="Neck" type="Node3D" parent="World/Player/CharacterBody3D"]
 
 [node name="Camera3d" type="Camera3D" parent="World/Player/CharacterBody3D/Neck"]
-
-[node name="RayCast3D" type="RayCast3D" parent="World/Player/CharacterBody3D/Neck/Camera3d"]
-target_position = Vector3(0, 0, -2)
-script = ExtResource("4_5v85a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_d6gnd")
