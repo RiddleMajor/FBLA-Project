@@ -1,6 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=12 format=3 uid="uid://bf3fjqfxdruql"]
 
 [ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="3_kj1qg"]
+
+[sub_resource type="GDScript" id="GDScript_12xlo"]
+script/source = "extends Label
+
+@export var LabelText := \" \"
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	display()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	$\".\".text=LabelText
+
+func display():
+	$\".\".text=LabelText
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
 
@@ -15,7 +32,47 @@ sky = SubResource("Sky_keshh")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2o47k"]
 
+[sub_resource type="GDScript" id="GDScript_fvkno"]
+script/source = "extends StaticBody3D
+
+@export var Interact := 0
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+	
+"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_twnb2"]
+
+[sub_resource type="GDScript" id="GDScript_8ep25"]
+script/source = "extends RayCast3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if is_colliding():
+		if $\"../../../../../Enviroment/StaticBody3D2\".Interact==0:
+			$\"../../../../../Enviroment/StaticBody3D2\".Interact=1
+
+		else:
+			pass
+		print(\"hit\")
+	else:
+		print(\"not\")
+		$\"../../../../../Enviroment/StaticBody3D2\".Interact=0
+"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6gnd"]
 
@@ -29,6 +86,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 156.0
+offset_right = 251.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = SubResource("GDScript_12xlo")
 
 [node name="World" type="Node3D" parent="."]
 
@@ -52,6 +126,7 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="World/Enviroment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43751, 0.946276, -3.79955)
+script = SubResource("GDScript_fvkno")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2"]
 shape = SubResource("BoxShape3D_l6oc6")
@@ -75,6 +150,10 @@ script = ExtResource("3_kj1qg")
 [node name="Neck" type="Node3D" parent="World/Player/CharacterBody3D"]
 
 [node name="Camera3d" type="Camera3D" parent="World/Player/CharacterBody3D/Neck"]
+
+[node name="RayCast3D" type="RayCast3D" parent="World/Player/CharacterBody3D/Neck/Camera3d"]
+target_position = Vector3(0, 0, -2)
+script = SubResource("GDScript_8ep25")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_d6gnd")
