@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=12 format=3 uid="uid://bf3fjqfxdruql"]
 
-[ext_resource type="Script" path="res://Scripts/TalkingBox.gd" id="1_oeyqt"]
-[ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="3_kj1qg"]
+[ext_resource type="Script" path="res://Scripts/TalkTemplate.gd" id="1_ri5be"]
+[ext_resource type="Script" path="res://Scenes/InteractPrompt.gd" id="1_ynqn1"]
+[ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="2_2uphj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
 
@@ -50,6 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Press E to Interact"
+script = ExtResource("1_ynqn1")
 
 [node name="World" type="Node3D" parent="."]
 
@@ -82,7 +84,7 @@ mesh = SubResource("BoxMesh_2o47k")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="World/Enviroment/StaticBody3D2"]
-script = ExtResource("1_oeyqt")
+script = ExtResource("1_ri5be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2/Area3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -90,7 +92,7 @@ shape = SubResource("BoxShape3D_twnb2")
 
 [node name="Player" type="CharacterBody3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("3_kj1qg")
+script = ExtResource("2_2uphj")
 
 [node name="Neck" type="Node3D" parent="World/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374488, -0.0900156)

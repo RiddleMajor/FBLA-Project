@@ -1,6 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728229623
-test.tscn::PackedScene::2795487985253253075::1728229623::0::1::::<><>::res://Scripts/TalkingBox.gd<>res://Scripts/Godot4FPS.gd
+::res://::1728231538
 ::res://addons/::1728227581
 ::res://addons/dialogue_manager/::1728227583
 constants.gd::GDScript::-1::1728227582::0::1::::<>Node<>::
@@ -74,8 +73,9 @@ settings_view.tscn::PackedScene::5839841081119266502::1728227583::0::1::::<><>::
 dialogue test.dialogue::Resource::649235765031957973::1728228089::1728228089::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 ::res://Images/::1728224763
 icon.svg::CompressedTexture2D::3083139758856155069::1728224748::1728224763::1::::<><>::
-::res://Scenes/::1728224748
-test.tscn::PackedScene::8168799087891039414::1728224748::0::1::::<><>::res://Scripts/TalkingBox.gd<>res://Scripts/Godot4FPS.gd<>res://Scripts/RayCastScript.gd
-::res://Scripts/::1728229623
+::res://Scenes/::1728231410
+test.tscn::PackedScene::2795487985253253075::1728231410::0::1::::<><>::res://Scripts/TalkTemplate.gd<>res://Scripts/Godot4FPS.gd
+::res://Scripts/::1728231538
+globalvars.gd::GDScript::-1::1728231536::0::1::::<>Node<>::
 Godot4FPS.gd::GDScript::-1::1728224748::0::1::::<>CharacterBody3D<>::
-TalkingBox.gd::GDScript::-1::1728229505::0::1::::<>Area3D<>::
+TalkTemplate.gd::GDScript::-1::1728231410::0::1::::<>Area3D<>::
