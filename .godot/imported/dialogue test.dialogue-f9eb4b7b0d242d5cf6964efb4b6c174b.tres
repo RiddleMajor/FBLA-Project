@@ -1,0 +1,376 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_q2pr6"]
+
+[resource]
+script = ExtResource("1_q2pr6")
+using_states = PackedStringArray()
+titles = {
+"test": "3"
+}
+character_names = PackedStringArray("Box", "You")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "test",
+"type": &"title"
+},
+"10": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "28",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": ".....",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": ".....",
+"type": &"dialogue"
+},
+"12": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "13",
+"next_id_after": "28",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Totally Tubular Brah Man",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Totally Tubular Brah Man",
+"type": &"response"
+},
+"13": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "13",
+"next_id": "14",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "Yahh dude, gotta ride that wave of life, anyways, want a blunt?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Yahh dude, gotta ride that wave of life, anyways, want a blunt?",
+"type": &"dialogue"
+},
+"14": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "15",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "*thinking*",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*thinking*",
+"type": &"dialogue"
+},
+"15": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "15",
+"next_id": "16",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "12",
+"responses": PackedStringArray("15", "18"),
+"tags": PackedStringArray(),
+"text": "Refuse(drug addiction is bad)",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Refuse(drug addiction is bad)",
+"type": &"response"
+},
+"16": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "17",
+"notes": "",
+"parent_id": "15",
+"tags": PackedStringArray(),
+"text": "My mom said no, sorry",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "My mom said no, sorry",
+"type": &"dialogue"
+},
+"17": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "17",
+"next_id": "28",
+"notes": "",
+"parent_id": "15",
+"tags": PackedStringArray(),
+"text": "But you're 20... ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "But you're 20... ?",
+"type": &"dialogue"
+},
+"18": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "Accept(we do a little bit of trolling)",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Accept(we do a little bit of trolling)",
+"type": &"response"
+},
+"19": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "19",
+"next_id": "20",
+"notes": "",
+"parent_id": "18",
+"tags": PackedStringArray(),
+"text": "That's what I'm talkin' about!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "That's what I'm talkin' about!!",
+"type": &"dialogue"
+},
+"20": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "20",
+"next_id": "28",
+"notes": "",
+"parent_id": "18",
+"tags": PackedStringArray(),
+"text": "*Dies*(this should've been obvious)",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*Dies*(this should've been obvious)",
+"type": &"dialogue"
+},
+"21": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "21",
+"next_id": "22",
+"next_id_after": "28",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Erm, what the sigma; boxes can't talk.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Erm, what the sigma; boxes can't talk.",
+"type": &"response"
+},
+"22": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "22",
+"next_id": "23",
+"notes": "",
+"parent_id": "21",
+"tags": PackedStringArray(),
+"text": "*shushes you tenderly* *meow* *starts mewing lustfully*",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*shushes you tenderly* *meow* *starts mewing lustfully*",
+"type": &"dialogue"
+},
+"23": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "23",
+"next_id": "24",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "21",
+"responses": PackedStringArray("23", "25"),
+"tags": PackedStringArray(),
+"text": "Die of cringe",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Die of cringe",
+"type": &"response"
+},
+"24": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "24",
+"next_id": "28",
+"notes": "",
+"parent_id": "23",
+"tags": PackedStringArray(),
+"text": "*dies of cringe*",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*dies of cringe*",
+"type": &"dialogue"
+},
+"25": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "25",
+"next_id": "26",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "21",
+"tags": PackedStringArray(),
+"text": "*Mog him back*",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*Mog him back*",
+"type": &"response"
+},
+"26": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "26",
+"next_id": "27",
+"notes": "",
+"parent_id": "25",
+"tags": PackedStringArray(),
+"text": "*mews so hard the universe itself gets mogged* *becomes all powerful*",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*mews so hard the universe itself gets mogged* *becomes all powerful*",
+"type": &"dialogue"
+},
+"27": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "27",
+"next_id": "28",
+"notes": "",
+"parent_id": "25",
+"tags": PackedStringArray(),
+"text": "I am your eternal servant, my looksmaxxing liege",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I am your eternal servant, my looksmaxxing liege",
+"type": &"dialogue"
+},
+"28": {
+"id": "28",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"3": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Yo! I'm a BOX!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Yo! I'm a BOX!!",
+"type": &"dialogue"
+},
+"4": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"next_id_after": "28",
+"notes": "",
+"responses": PackedStringArray("4", "12", "21"),
+"tags": PackedStringArray(),
+"text": "Sick",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sick",
+"type": &"response"
+},
+"5": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"notes": "",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "The heat death of the universe is slowly approaching, and you can do nothing to stop it. Your death is also imminent, crawling forward, and you will eventually be claimed by the infinite void of obliteration",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "The heat death of the universe is slowly approaching, and you can do nothing to stop it. Your death is also imminent, crawling forward, and you will eventually be claimed by the infinite void of obliteration",
+"type": &"dialogue"
+},
+"6": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"notes": "",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "Uhhhh",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Uhhhh",
+"type": &"dialogue"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "4",
+"responses": PackedStringArray("7", "9"),
+"tags": PackedStringArray(),
+"text": "*thumbs up*",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*thumbs up*",
+"type": &"response"
+},
+"8": {
+"character": "Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "28",
+"notes": "",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "Glad you understand.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Glad you understand.",
+"type": &"dialogue"
+},
+"9": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "10",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "Just put the fries in the bag bro",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Just put the fries in the bag bro",
+"type": &"response"
+}
+}
+raw_text = "~ test
+
+Box: Yo! I'm a BOX!!
+- Sick
+	Box: The heat death of the universe is slowly approaching, and you can do nothing to stop it. Your death is also imminent, crawling forward, and you will eventually be claimed by the infinite void of obliteration
+	You: Uhhhh
+	- *thumbs up*
+		Box: Glad you understand.
+	- Just put the fries in the bag bro
+		Box: .....
+	
+- Totally Tubular Brah Man
+	Box: Yahh dude, gotta ride that wave of life, anyways, want a blunt?
+	You: *thinking*
+	- Refuse(drug addiction is bad)
+		You: My mom said no, sorry
+		Box: But you're 20... ?
+	- Accept(we do a little bit of trolling)
+		Box: That's what I'm talkin' about!!
+		You: *Dies*(this should've been obvious)
+- Erm, what the sigma; boxes can't talk.
+	Box: *shushes you tenderly* *meow* *starts mewing lustfully*
+	- Die of cringe
+		You: *dies of cringe*
+	- *Mog him back*
+		You: *mews so hard the universe itself gets mogged* *becomes all powerful*
+		Box: I am your eternal servant, my looksmaxxing liege
+=> END"
+metadata/dialogue_manager_version = "2.42.2"
