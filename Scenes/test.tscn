@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dona6sgrc62l3"]
+[gd_scene load_steps=11 format=3 uid="uid://bf3fjqfxdruql"]
 
-[ext_resource type="Script" path="res://Scripts/TalkingBox.gd" id="2_rxpdj"]
-[ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="3_u5y37"]
-[ext_resource type="Script" path="res://Scripts/RayCastScript.gd" id="4_nf0ur"]
+[ext_resource type="Script" path="res://Scripts/TalkingBox.gd" id="1_oeyqt"]
+[ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="3_kj1qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
 
@@ -19,17 +18,46 @@ sky = SubResource("Sky_keshh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_twnb2"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3t1gf"]
+size = Vector3(2.51291, 1.51111, 2.1792)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6gnd"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="World" type="Node3D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
-environment = SubResource("Environment_flucs")
+[node name="InteractPrompt" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 0.78
+anchor_right = 0.498
+anchor_bottom = 0.78
+offset_left = -109.696
+offset_top = -17.44
+offset_right = 110.304
+offset_bottom = 17.56
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Press E to Interact"
+
+[node name="World" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 0.805111, 0.593124, 0, -0.593124, 0.805111, 0, 3.23897, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_flucs")
 
 [node name="Enviroment" type="Node3D" parent="World"]
 
@@ -45,7 +73,6 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="World/Enviroment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43751, 0.946276, -3.79955)
-script = ExtResource("2_rxpdj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2"]
 shape = SubResource("BoxShape3D_l6oc6")
@@ -55,26 +82,31 @@ mesh = SubResource("BoxMesh_2o47k")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="World/Enviroment/StaticBody3D2"]
+script = ExtResource("1_oeyqt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2/Area3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_twnb2")
 
-[node name="Player" type="Node3D" parent="World"]
+[node name="Player" type="CharacterBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("3_kj1qg")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="World/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39863, 0)
-script = ExtResource("3_u5y37")
+[node name="Neck" type="Node3D" parent="World/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374488, -0.0900156)
 
-[node name="Neck" type="Node3D" parent="World/Player/CharacterBody3D"]
+[node name="Camera3d" type="Camera3D" parent="World/Player/Neck"]
 
-[node name="Camera3d" type="Camera3D" parent="World/Player/CharacterBody3D/Neck"]
+[node name="InteractionArea" type="Area3D" parent="World/Player/Neck/Camera3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62811, 0.0900156)
+priority = 999
 
-[node name="RayCast3D" type="RayCast3D" parent="World/Player/CharacterBody3D/Neck/Camera3d"]
-target_position = Vector3(0, 0, -2)
-script = ExtResource("4_nf0ur")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/Neck/Camera3d/InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0154572, 0.380676, -0.78833)
+shape = SubResource("BoxShape3D_3t1gf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/CharacterBody3D"]
+[node name="CollisionShape" type="CollisionShape3D" parent="World/Player"]
 shape = SubResource("CapsuleShape3D_d6gnd")
 
 [connection signal="area_entered" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_entered"]
+[connection signal="area_exited" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_exited"]
