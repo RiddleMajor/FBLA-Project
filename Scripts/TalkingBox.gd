@@ -1,8 +1,8 @@
 extends Area3D
 
 @onready var interact = 0
-@export var path := 
-@export var title := 
+@export var path := "res://Dialogue/dialogue test.dialogue"
+@export var title := "test"
 
 func _ready():
 	pass

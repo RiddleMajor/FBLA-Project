@@ -1,4 +1,10 @@
 Label
+Control
+TextEdit
+BoxContainer
+TextureRect
+Panel
+PanelContainer
 ColorRect
 CollisionShape3D
 Area3D

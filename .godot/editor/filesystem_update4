@@ -7,3 +7,6 @@ res://Scenes/InteractPrompt.gd
 res://Scripts/InteractPrompt.gd
 res://promptvisible.gd
 res://Scripts/global.gd
+res://leftcard.tres
+res://bluecard.tres
+res://Scripts/TalkingBox.gd

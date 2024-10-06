@@ -1,8 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=15 format=3 uid="uid://bf3fjqfxdruql"]
 
-[ext_resource type="Script" path="res://Scripts/TalkTemplate.gd" id="1_ri5be"]
-[ext_resource type="Script" path="res://Scenes/InteractPrompt.gd" id="1_ynqn1"]
+[ext_resource type="Script" path="res://Scripts/TalkingBox.gd" id="1_ri5be"]
+[ext_resource type="Script" path="res://Scripts/InteractPrompt.gd" id="1_ynqn1"]
 [ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="2_2uphj"]
+[ext_resource type="Script" path="res://Scenes/LeftCard.gd" id="2_tsiwi"]
+[ext_resource type="StyleBox" uid="uid://dygekfpv0rq6m" path="res://redcard.tres" id="3_1tmra"]
+[ext_resource type="StyleBox" uid="uid://chy4ruwsrv1j8" path="res://bluecard.tres" id="4_lxhgb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
 
@@ -52,6 +55,207 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Press E to Interact"
 script = ExtResource("1_ynqn1")
+
+[node name="LeftCard" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_tsiwi")
+
+[node name="TextureRect" type="TextureRect" parent="Control/LeftCard"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 168.0
+offset_bottom = 168.0
+scale = Vector2(7.97483, 4.7613)
+
+[node name="Panel" type="Panel" parent="Control/LeftCard"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 56.0
+scale = Vector2(11.2, 15.4)
+theme_override_styles/panel = ExtResource("3_1tmra")
+
+[node name="Line1" type="Label" parent="Control/LeftCard"]
+layout_mode = 0
+anchor_left = 0.111111
+anchor_top = 0.592593
+anchor_right = 0.388021
+anchor_bottom = 0.628086
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.641975
+anchor_right = 0.388021
+anchor_bottom = 0.677469
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line3" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.691358
+anchor_right = 0.388021
+anchor_bottom = 0.726852
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line4" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.740741
+anchor_right = 0.388021
+anchor_bottom = 0.776235
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line5" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.790123
+anchor_right = 0.388021
+anchor_bottom = 0.825617
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Control/LeftCard"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 56.0
+offset_right = 318.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+horizontal_alignment = 1
+
+[node name="RightCard" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/RightCard"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 744.0
+offset_bottom = 168.0
+scale = Vector2(7.97483, 4.7613)
+
+[node name="Panel" type="Panel" parent="Control/RightCard"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 16.0
+offset_right = 680.0
+offset_bottom = 56.0
+scale = Vector2(11.2, 15.4)
+theme_override_styles/panel = ExtResource("4_lxhgb")
+
+[node name="Line1" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.592593
+anchor_right = 0.388021
+anchor_bottom = 0.628086
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.641975
+anchor_right = 0.388021
+anchor_bottom = 0.677469
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line3" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.691358
+anchor_right = 0.388021
+anchor_bottom = 0.726852
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line4" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.740741
+anchor_right = 0.388021
+anchor_bottom = 0.776235
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line5" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.790123
+anchor_right = 0.388021
+anchor_bottom = 0.825617
+offset_left = 576.0
+offset_right = 576.0
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Control/RightCard"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 56.0
+offset_right = 894.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+horizontal_alignment = 1
 
 [node name="World" type="Node3D" parent="."]
 
