@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_3wged"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_4fje4"]
 
 [resource]
-script = ExtResource("1_3wged")
+script = ExtResource("1_4fje4")
 using_states = PackedStringArray()
 titles = {
 "test": "3"
@@ -247,7 +247,7 @@ lines = {
 "28": {
 "id": "28",
 "is_snippet": false,
-"next_id": "end",
+"next_id": "end!",
 "type": &"goto"
 },
 "3": {
@@ -372,5 +372,5 @@ Box: Yo! I'm a BOX!!
 	- *Mog him back*
 		You: *mews so hard the universe itself gets mogged* *becomes all powerful*
 		Box: I am your eternal servant, my looksmaxxing liege
-=> END"
+=> END!"
 metadata/dialogue_manager_version = "2.42.2"
