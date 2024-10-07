@@ -1,4 +1,14 @@
 Label
+<<<<<<< Updated upstream
+=======
+Button
+Control
+TextEdit
+BoxContainer
+TextureRect
+Panel
+PanelContainer
+>>>>>>> Stashed changes
 ColorRect
 CollisionShape3D
 Area3D

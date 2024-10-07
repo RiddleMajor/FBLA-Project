@@ -7,6 +7,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3d
 @export var speed := 5.0
+@export var decisionmode := 0
 
 var target_camera_y: float
 var original_camera_y: float  # To store the initial position
@@ -14,6 +15,10 @@ var original_camera_y: float  # To store the initial position
 func _ready():
 	original_camera_y = camera.position.y  # Save the initial Y position
 	target_camera_y = camera.position.y  # Initialize target Y position
+	
+func _process(delta):
+	if decisionmode == 1:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -43,15 +48,15 @@ func _physics_process(delta: float) -> void:
 		speed = 6.5
 	if Input.is_action_just_released("shift"):
 		speed = 5
-	
-	var input_dir := Input.get_vector("a", "d", "w", "s")
-	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
+	if decisionmode == 0:
+		var input_dir := Input.get_vector("a", "d", "w", "s")
+		var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+			velocity.z = move_toward(velocity.z, 0, speed)
 
-	move_and_slide()
+		move_and_slide()
 
