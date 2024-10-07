@@ -6,11 +6,12 @@ Box: Yo! I'm a BOX!!
 	You: Uhhhh
 	- *thumbs up*
 		Box: Glad you understand.
+		do global.lunchchoice.emit()
 	- Just put the fries in the bag bro
 		Box: .....
 	
 - Totally Tubular Brah Man
-	Box: Yahh dude, gotta ride that wave of life, anyways, want a blunt
+	Box: Yahh dude, gotta ride that wave of life, anyways, want a blunt?
 	You: *thinking*
 	- Refuse(drug addiction is bad)
 		You: My mom said no, sorry

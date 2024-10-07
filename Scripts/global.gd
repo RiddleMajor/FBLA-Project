@@ -2,8 +2,6 @@ extends Node
 
 
 var promptvisible = 0
-<<<<<<< Updated upstream
-=======
 
 
 var left1 = "example"
@@ -29,4 +27,3 @@ var lunchdecided = 0
 
 
 signal lunchchoice
->>>>>>> Stashed changes
