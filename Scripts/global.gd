@@ -2,6 +2,8 @@ extends Node
 
 
 var promptvisible = 0
+
+
 var left1 = "example"
 var left2 = "example"
 var left3 = "example"
@@ -13,6 +15,15 @@ var right2 = "example"
 var right3 = "example"
 var right4 = "example"
 var right5 = "example"
-var title = "example"
+var righttitle = "example"
 var leftimage = "path here"
 var rightimage = "path here"
+
+var leftclicked = 0
+var rightclicked = 0
+
+
+var lunchdecided = 0
+
+
+signal lunchchoice

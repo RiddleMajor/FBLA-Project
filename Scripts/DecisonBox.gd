@@ -5,7 +5,7 @@ extends Area3D
 @export var title := "test"
 
 func _ready():
-	pass
+	global.lunchchoice.connect(self.decision)
 
 
 func _process(delta):
@@ -31,3 +31,14 @@ func _on_area_entered(area):
 func _on_area_exited(area):
 	interact = 0
 	global.promptvisible = 0
+func decision(unused_argument = null):
+	$"../../../../Control/LeftCard".visible = true
+	$"../../../../Control/RightCard".visible = true
+	global.left1 = "Hamburger"
+	global.lefttitle = "Hamburger"
+	global.right1 = "Pizza"
+	global.righttitle = "Pizza"
+	$"../../../Player".decisionmode = 1
+	global.lunchdecided = 1
+	
+	

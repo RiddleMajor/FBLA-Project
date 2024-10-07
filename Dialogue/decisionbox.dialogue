@@ -1,0 +1,10 @@
+~ test
+
+Box: Hello
+- Hello
+	Box: What's for lunch?
+	do global.lunchchoice.emit()
+- What do you want?
+	Box: What's for lunch?
+	do global.lunchchoice.emit()
+=> END!

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dyaxg3s0sep87"
+path="res://.godot/imported/decisionbox.dialogue-8f500350525525ca34274137d2c4f9b9.tres"
+
+[deps]
+
+source_file="res://Dialogue/decisionbox.dialogue"
+dest_files=["res://.godot/imported/decisionbox.dialogue-8f500350525525ca34274137d2c4f9b9.tres"]
+
+[params]
+
+defaults=true

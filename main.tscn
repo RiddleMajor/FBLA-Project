@@ -1,11 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=23 format=3 uid="uid://bf3fjqfxdruql"]
 
-[ext_resource type="Script" path="res://Scripts/TalkingBox.gd" id="1_ri5be"]
-[ext_resource type="Script" path="res://Scripts/InteractPrompt.gd" id="1_ynqn1"]
-[ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="2_2uphj"]
-[ext_resource type="Script" path="res://Scenes/LeftCard.gd" id="2_tsiwi"]
-[ext_resource type="StyleBox" uid="uid://dygekfpv0rq6m" path="res://redcard.tres" id="3_1tmra"]
-[ext_resource type="StyleBox" uid="uid://chy4ruwsrv1j8" path="res://bluecard.tres" id="4_lxhgb"]
+[ext_resource type="Script" path="res://Scripts/InteractPrompt.gd" id="1_mxj12"]
+[ext_resource type="Script" path="res://Scripts/LeftCard.gd" id="2_msh45"]
+[ext_resource type="StyleBox" uid="uid://dygekfpv0rq6m" path="res://redcard.tres" id="3_dhytt"]
+[ext_resource type="Script" path="res://Scripts/LeftButton.gd" id="4_tequ7"]
+[ext_resource type="Script" path="res://Scripts/RightCard.gd" id="5_j6m3e"]
+[ext_resource type="StyleBox" uid="uid://chy4ruwsrv1j8" path="res://bluecard.tres" id="6_fbr3c"]
+[ext_resource type="Script" path="res://Scripts/RightButton.gd" id="7_ky1ln"]
+[ext_resource type="Script" path="res://Scripts/DecisonBox.gd" id="8_emusx"]
+[ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="9_num8w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03o1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnik6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y66j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a45ka"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkvkj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
 
@@ -54,9 +67,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Press E to Interact"
-script = ExtResource("1_ynqn1")
+script = ExtResource("1_mxj12")
 
 [node name="LeftCard" type="Control" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,7 +78,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("2_tsiwi")
+script = ExtResource("2_msh45")
 
 [node name="TextureRect" type="TextureRect" parent="Control/LeftCard"]
 layout_mode = 0
@@ -81,7 +95,22 @@ offset_top = 16.0
 offset_right = 104.0
 offset_bottom = 56.0
 scale = Vector2(11.2, 15.4)
-theme_override_styles/panel = ExtResource("3_1tmra")
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_dhytt")
+
+[node name="Button" type="Button" parent="Control/LeftCard/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_03o1j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fnik6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2y66j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a45ka")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vkvkj")
+script = ExtResource("4_tequ7")
 
 [node name="Line1" type="Label" parent="Control/LeftCard"]
 layout_mode = 0
@@ -144,15 +173,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="Control/LeftCard"]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 56.0
-offset_right = 318.0
-offset_bottom = 98.0
+offset_left = 112.0
+offset_top = 48.0
+offset_right = 459.0
+offset_bottom = 90.0
 theme_override_font_sizes/font_size = 30
 text = "Title"
 horizontal_alignment = 1
 
 [node name="RightCard" type="Control" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +190,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("5_j6m3e")
 
 [node name="TextureRect" type="TextureRect" parent="Control/RightCard"]
 layout_mode = 0
@@ -176,7 +207,22 @@ offset_top = 16.0
 offset_right = 680.0
 offset_bottom = 56.0
 scale = Vector2(11.2, 15.4)
-theme_override_styles/panel = ExtResource("4_lxhgb")
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("6_fbr3c")
+
+[node name="Button" type="Button" parent="Control/RightCard/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_03o1j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fnik6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2y66j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a45ka")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vkvkj")
+script = ExtResource("7_ky1ln")
 
 [node name="Line1" type="Label" parent="Control/RightCard"]
 layout_mode = 1
@@ -249,9 +295,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="Control/RightCard"]
 layout_mode = 0
-offset_left = 832.0
+offset_left = 680.0
 offset_top = 56.0
-offset_right = 894.0
+offset_right = 1042.0
 offset_bottom = 98.0
 theme_override_font_sizes/font_size = 30
 text = "Title"
@@ -288,7 +334,8 @@ mesh = SubResource("BoxMesh_2o47k")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="World/Enviroment/StaticBody3D2"]
-script = ExtResource("1_ri5be")
+script = ExtResource("8_emusx")
+path = "res://Dialogue/decisionbox.dialogue"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2/Area3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -296,7 +343,7 @@ shape = SubResource("BoxShape3D_twnb2")
 
 [node name="Player" type="CharacterBody3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("2_2uphj")
+script = ExtResource("9_num8w")
 
 [node name="Neck" type="Node3D" parent="World/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374488, -0.0900156)
@@ -314,5 +361,7 @@ shape = SubResource("BoxShape3D_3t1gf")
 [node name="CollisionShape" type="CollisionShape3D" parent="World/Player"]
 shape = SubResource("CapsuleShape3D_d6gnd")
 
+[connection signal="pressed" from="Control/LeftCard/Panel/Button" to="Control/LeftCard/Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/RightCard/Panel/Button" to="Control/RightCard/Panel/Button" method="_on_pressed"]
 [connection signal="area_entered" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_entered"]
 [connection signal="area_exited" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_exited"]
