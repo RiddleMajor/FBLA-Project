@@ -3,8 +3,14 @@
 Box: Hello
 - Hello
 	Box: What's for lunch?
-	do global.lunchchoice.emit()
+	- *Choose*
+		do global.signalname = "lunch"
+		=> END!
+	- Not sure yet.
 - What do you want?
 	Box: What's for lunch?
-	do global.lunchchoice.emit()
+	- *Choose*
+		do global.signalname = "lunch"
+		=> END!
+	- Not sure yet.
 => END!

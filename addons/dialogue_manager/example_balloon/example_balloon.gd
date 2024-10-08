@@ -92,6 +92,7 @@ func _ready() -> void:
 	# If the responses menu doesn't have a next action set, use this one
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action
+		balloon.hide()
 
 
 func _unhandled_input(_event: InputEvent) -> void:

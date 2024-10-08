@@ -3,6 +3,8 @@ extends Node
 
 var promptvisible = 0
 
+var decisionmode = 0
+
 
 var left1 = "example"
 var left2 = "example"
@@ -19,11 +21,11 @@ var righttitle = "example"
 var leftimage = "path here"
 var rightimage = "path here"
 
+
+var signalname = ""
+
+
 var leftclicked = 0
 var rightclicked = 0
 
 
-var lunchdecided = 0
-
-
-signal lunchchoice

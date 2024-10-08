@@ -15,6 +15,9 @@ func _on_pressed():
 	global.leftclicked = 1
 	$"../..".visible = false
 	$"../../../RightCard".visible = false
-	$"../../../../World/Player".decisionmode = 0
+	global.decisionmode = 0
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	global.signalname = " "
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	await get_tree().create_timer(0.01).timeout
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

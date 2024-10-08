@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/RightCard.gd" id="5_j6m3e"]
 [ext_resource type="StyleBox" uid="uid://chy4ruwsrv1j8" path="res://bluecard.tres" id="6_fbr3c"]
 [ext_resource type="Script" path="res://Scripts/RightButton.gd" id="7_ky1ln"]
-[ext_resource type="Script" path="res://Scripts/DecisonBox.gd" id="8_emusx"]
+[ext_resource type="Script" path="res://Scripts/Template Scripts/DecisionTemplate.gd" id="8_emusx"]
 [ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="9_num8w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03o1j"]
@@ -336,6 +336,11 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="World/Enviroment/StaticBody3D2"]
 script = ExtResource("8_emusx")
 path = "res://Dialogue/decisionbox.dialogue"
+left_line1 = " Hamburger"
+left_title = " Hamburger"
+right_line1 = " Pizza"
+right_title = " Pizza"
+signalname = "lunch"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2/Area3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
