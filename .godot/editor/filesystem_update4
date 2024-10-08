@@ -1,2 +1,3 @@
 res://main.tscn
-res://Scripts/Godot4FPS.gd
+res://Scripts/Template Scripts/DecisionTemplate.gd
+res://Scripts/global.gd

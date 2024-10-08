@@ -28,8 +28,8 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		reset()
 	if global.signalname == signalname:
-		$"../../../../Control/LeftCard".visible = true
-		$"../../../../Control/RightCard".visible = true
+		$"../../Control/LeftCard".visible = true
+		$"../../Control/RightCard".visible = true
 		global.left1 = left_line1
 		global.left2 = left_line2
 		global.left3 = left_line3

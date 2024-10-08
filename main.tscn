@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=24 format=3 uid="uid://bf3fjqfxdruql"]
 
 [ext_resource type="Script" path="res://Scripts/InteractPrompt.gd" id="1_mxj12"]
 [ext_resource type="Script" path="res://Scripts/LeftCard.gd" id="2_msh45"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://chy4ruwsrv1j8" path="res://bluecard.tres" id="6_fbr3c"]
 [ext_resource type="Script" path="res://Scripts/RightButton.gd" id="7_ky1ln"]
 [ext_resource type="Script" path="res://Scripts/Template Scripts/DecisionTemplate.gd" id="8_emusx"]
+[ext_resource type="PackedScene" uid="uid://dllw7hh3887xi" path="res://Business Man.glb" id="9_cq7fr"]
 [ext_resource type="Script" path="res://Scripts/Godot4FPS.gd" id="9_num8w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03o1j"]
@@ -33,12 +34,13 @@ sky = SubResource("Sky_keshh")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2o47k"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_twnb2"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3t1gf"]
 size = Vector3(2.51291, 1.51111, 2.1792)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6gnd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twnb2"]
+size = Vector3(1, 1.76477, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -323,29 +325,6 @@ shape = SubResource("BoxShape3D_l6oc6")
 mesh = SubResource("BoxMesh_2o47k")
 skeleton = NodePath("")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="World/Enviroment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43751, 0.946276, -3.79955)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2"]
-shape = SubResource("BoxShape3D_l6oc6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Enviroment/StaticBody3D2"]
-mesh = SubResource("BoxMesh_2o47k")
-skeleton = NodePath("")
-
-[node name="Area3D" type="Area3D" parent="World/Enviroment/StaticBody3D2"]
-script = ExtResource("8_emusx")
-path = "res://Dialogue/decisionbox.dialogue"
-left_line1 = " Hamburger"
-left_title = " Hamburger"
-right_line1 = " Pizza"
-right_title = " Pizza"
-signalname = "lunch"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2/Area3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-shape = SubResource("BoxShape3D_twnb2")
-
 [node name="Player" type="CharacterBody3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("9_num8w")
@@ -366,7 +345,23 @@ shape = SubResource("BoxShape3D_3t1gf")
 [node name="CollisionShape" type="CollisionShape3D" parent="World/Player"]
 shape = SubResource("CapsuleShape3D_d6gnd")
 
+[node name="Root Scene" parent="." instance=ExtResource("9_cq7fr")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.68916, 0.5, -3.52751)
+
+[node name="Area3D" type="Area3D" parent="Root Scene"]
+script = ExtResource("8_emusx")
+path = "res://Dialogue/decisionbox.dialogue"
+left_line1 = " Hamburger"
+left_title = " Hamburger"
+right_line1 = " Pizza"
+right_title = " Pizza"
+signalname = "lunch"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0451612, 0.640965, 0.0305905)
+shape = SubResource("BoxShape3D_twnb2")
+
 [connection signal="pressed" from="Control/LeftCard/Panel/Button" to="Control/LeftCard/Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/RightCard/Panel/Button" to="Control/RightCard/Panel/Button" method="_on_pressed"]
-[connection signal="area_entered" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_entered"]
-[connection signal="area_exited" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_exited"]
+[connection signal="area_entered" from="Root Scene/Area3D" to="Root Scene/Area3D" method="_on_area_entered"]
+[connection signal="area_exited" from="Root Scene/Area3D" to="Root Scene/Area3D" method="_on_area_exited"]
