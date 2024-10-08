@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_yi7ms"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_upfeh"]
 
 [resource]
-script = ExtResource("1_yi7ms")
+script = ExtResource("1_upfeh")
 using_states = PackedStringArray()
 titles = {
 "test": "3"
@@ -18,38 +18,24 @@ lines = {
 "type": &"title"
 },
 "10": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "10",
-"next_id": "11",
-"next_id_after": "29",
-"notes": "",
-"parent_id": "4",
-"tags": PackedStringArray(),
-"text": "Just put the fries in the bag bro",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Just put the fries in the bag bro",
-"type": &"response"
-},
-"11": {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
-"id": "11",
-"next_id": "29",
+"id": "10",
+"next_id": "28",
 "notes": "",
-"parent_id": "10",
+"parent_id": "9",
 "tags": PackedStringArray(),
 "text": ".....",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": ".....",
 "type": &"dialogue"
 },
-"13": {
+"12": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "13",
-"next_id": "14",
-"next_id_after": "29",
+"id": "12",
+"next_id": "13",
+"next_id_after": "28",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Totally Tubular Brah Man",
@@ -57,119 +43,119 @@ lines = {
 "translation_key": "Totally Tubular Brah Man",
 "type": &"response"
 },
-"14": {
+"13": {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
-"id": "14",
-"next_id": "15",
+"id": "13",
+"next_id": "14",
 "notes": "",
-"parent_id": "13",
+"parent_id": "12",
 "tags": PackedStringArray(),
 "text": "Yahh dude, gotta ride that wave of life, anyways, want a blunt?",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Yahh dude, gotta ride that wave of life, anyways, want a blunt?",
 "type": &"dialogue"
 },
-"15": {
+"14": {
 "character": "You",
 "character_replacements": Array[Dictionary]([]),
-"id": "15",
-"next_id": "16",
+"id": "14",
+"next_id": "15",
 "notes": "",
-"parent_id": "13",
+"parent_id": "12",
 "tags": PackedStringArray(),
 "text": "*thinking*",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "*thinking*",
 "type": &"dialogue"
 },
-"16": {
+"15": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "16",
-"next_id": "17",
-"next_id_after": "29",
+"id": "15",
+"next_id": "16",
+"next_id_after": "28",
 "notes": "",
-"parent_id": "13",
-"responses": PackedStringArray("16", "19"),
+"parent_id": "12",
+"responses": PackedStringArray("15", "18"),
 "tags": PackedStringArray(),
 "text": "Refuse(drug addiction is bad)",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Refuse(drug addiction is bad)",
 "type": &"response"
 },
-"17": {
+"16": {
 "character": "You",
 "character_replacements": Array[Dictionary]([]),
-"id": "17",
-"next_id": "18",
+"id": "16",
+"next_id": "17",
 "notes": "",
-"parent_id": "16",
+"parent_id": "15",
 "tags": PackedStringArray(),
 "text": "My mom said no, sorry",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "My mom said no, sorry",
 "type": &"dialogue"
 },
-"18": {
+"17": {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
-"id": "18",
-"next_id": "29",
+"id": "17",
+"next_id": "28",
 "notes": "",
-"parent_id": "16",
+"parent_id": "15",
 "tags": PackedStringArray(),
 "text": "But you're 20... ?",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "But you're 20... ?",
 "type": &"dialogue"
 },
-"19": {
+"18": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "19",
-"next_id": "20",
-"next_id_after": "29",
+"id": "18",
+"next_id": "19",
+"next_id_after": "28",
 "notes": "",
-"parent_id": "13",
+"parent_id": "12",
 "tags": PackedStringArray(),
 "text": "Accept(we do a little bit of trolling)",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Accept(we do a little bit of trolling)",
 "type": &"response"
 },
-"20": {
+"19": {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
-"id": "20",
-"next_id": "21",
+"id": "19",
+"next_id": "20",
 "notes": "",
-"parent_id": "19",
+"parent_id": "18",
 "tags": PackedStringArray(),
 "text": "That's what I'm talkin' about!!",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "That's what I'm talkin' about!!",
 "type": &"dialogue"
 },
-"21": {
+"20": {
 "character": "You",
 "character_replacements": Array[Dictionary]([]),
-"id": "21",
-"next_id": "29",
+"id": "20",
+"next_id": "28",
 "notes": "",
-"parent_id": "19",
+"parent_id": "18",
 "tags": PackedStringArray(),
 "text": "*Dies*(this should've been obvious)",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "*Dies*(this should've been obvious)",
 "type": &"dialogue"
 },
-"22": {
+"21": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "22",
-"next_id": "23",
-"next_id_after": "29",
+"id": "21",
+"next_id": "22",
+"next_id_after": "28",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Erm, what the sigma; boxes can't talk.",
@@ -177,89 +163,89 @@ lines = {
 "translation_key": "Erm, what the sigma; boxes can't talk.",
 "type": &"response"
 },
-"23": {
+"22": {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
-"id": "23",
-"next_id": "24",
+"id": "22",
+"next_id": "23",
 "notes": "",
-"parent_id": "22",
+"parent_id": "21",
 "tags": PackedStringArray(),
 "text": "*shushes you tenderly* *meow* *starts mewing lustfully*",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "*shushes you tenderly* *meow* *starts mewing lustfully*",
 "type": &"dialogue"
 },
-"24": {
+"23": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "24",
-"next_id": "25",
-"next_id_after": "29",
+"id": "23",
+"next_id": "24",
+"next_id_after": "28",
 "notes": "",
-"parent_id": "22",
-"responses": PackedStringArray("24", "26"),
+"parent_id": "21",
+"responses": PackedStringArray("23", "25"),
 "tags": PackedStringArray(),
 "text": "Die of cringe",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Die of cringe",
 "type": &"response"
 },
-"25": {
+"24": {
 "character": "You",
 "character_replacements": Array[Dictionary]([]),
-"id": "25",
-"next_id": "29",
+"id": "24",
+"next_id": "28",
 "notes": "",
-"parent_id": "24",
+"parent_id": "23",
 "tags": PackedStringArray(),
 "text": "*dies of cringe*",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "*dies of cringe*",
 "type": &"dialogue"
 },
-"26": {
+"25": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "26",
-"next_id": "27",
-"next_id_after": "29",
+"id": "25",
+"next_id": "26",
+"next_id_after": "28",
 "notes": "",
-"parent_id": "22",
+"parent_id": "21",
 "tags": PackedStringArray(),
 "text": "*Mog him back*",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "*Mog him back*",
 "type": &"response"
 },
-"27": {
+"26": {
 "character": "You",
 "character_replacements": Array[Dictionary]([]),
-"id": "27",
-"next_id": "28",
+"id": "26",
+"next_id": "27",
 "notes": "",
-"parent_id": "26",
+"parent_id": "25",
 "tags": PackedStringArray(),
 "text": "*mews so hard the universe itself gets mogged* *becomes all powerful*",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "*mews so hard the universe itself gets mogged* *becomes all powerful*",
 "type": &"dialogue"
 },
-"28": {
+"27": {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
-"id": "28",
-"next_id": "29",
+"id": "27",
+"next_id": "28",
 "notes": "",
-"parent_id": "26",
+"parent_id": "25",
 "tags": PackedStringArray(),
 "text": "I am your eternal servant, my looksmaxxing liege",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "I am your eternal servant, my looksmaxxing liege",
 "type": &"dialogue"
 },
-"29": {
-"id": "29",
+"28": {
+"id": "28",
 "is_snippet": false,
 "next_id": "end!",
 "type": &"goto"
@@ -281,9 +267,9 @@ lines = {
 "character_replacements": Array[Dictionary]([]),
 "id": "4",
 "next_id": "5",
-"next_id_after": "29",
+"next_id_after": "28",
 "notes": "",
-"responses": PackedStringArray("4", "13", "22"),
+"responses": PackedStringArray("4", "12", "21"),
 "tags": PackedStringArray(),
 "text": "Sick",
 "text_replacements": Array[Dictionary]([]),
@@ -321,10 +307,10 @@ lines = {
 "character_replacements": Array[Dictionary]([]),
 "id": "7",
 "next_id": "8",
-"next_id_after": "29",
+"next_id_after": "28",
 "notes": "",
 "parent_id": "4",
-"responses": PackedStringArray("7", "10"),
+"responses": PackedStringArray("7", "9"),
 "tags": PackedStringArray(),
 "text": "*thumbs up*",
 "text_replacements": Array[Dictionary]([]),
@@ -335,7 +321,7 @@ lines = {
 "character": "Box",
 "character_replacements": Array[Dictionary]([]),
 "id": "8",
-"next_id": "9",
+"next_id": "28",
 "notes": "",
 "parent_id": "7",
 "tags": PackedStringArray(),
@@ -345,28 +331,18 @@ lines = {
 "type": &"dialogue"
 },
 "9": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
 "id": "9",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "global"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "lunchchoice"
-}, {
-"type": "dot"
-}, {
-"function": "emit",
-"type": &"function",
-"value": Array[Array]([])
-}]),
-"is_blocking": true
-},
-"next_id": "29",
-"parent_id": "7",
-"type": &"mutation"
+"next_id": "10",
+"next_id_after": "28",
+"notes": "",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "Just put the fries in the bag bro",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Just put the fries in the bag bro",
+"type": &"response"
 }
 }
 raw_text = "~ test
@@ -377,7 +353,6 @@ Box: Yo! I'm a BOX!!
 	You: Uhhhh
 	- *thumbs up*
 		Box: Glad you understand.
-		do global.lunchchoice.emit()
 	- Just put the fries in the bag bro
 		Box: .....
 	

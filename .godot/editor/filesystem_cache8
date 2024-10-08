@@ -1,8 +1,8 @@
 98a70190bc03ec62debef81a9418c486
-::res://::1728267059
+::res://::1728348856
 bluecard.tres::StyleBoxFlat::5315500575530585267::1728265300::0::1::::<><>::
+main.tscn::PackedScene::2795487985253253075::1728348856::0::1::::<><>::res://Scripts/InteractPrompt.gd<>res://Scripts/LeftCard.gd<>uid://dygekfpv0rq6m::::res://redcard.tres<>res://Scripts/LeftButton.gd<>res://Scripts/RightCard.gd<>uid://chy4ruwsrv1j8::::res://bluecard.tres<>res://Scripts/RightButton.gd<>res://Scripts/Template Scripts/DecisionTemplate.gd<>res://Scripts/Godot4FPS.gd
 redcard.tres::StyleBoxFlat::8856441577603610850::1728265300::0::1::::<><>::
-tes.tscn::PackedScene::2795487985253253075::1728266957::0::1::::<><>::res://Scripts/InteractPrompt.gd<>res://Scripts/Godot4FPS.gd<>res://Scripts/LeftCard.gd<>uid://dygekfpv0rq6m::::res://redcard.tres<>res://Scripts/LeftButton.gd<>uid://chy4ruwsrv1j8::::res://bluecard.tres<>res://Scripts/RightCard.gd<>res://Scripts/RightButton.gd<>res://Scripts/DecisonBox.gd
 ::res://addons/::1728227581
 ::res://addons/dialogue_manager/::1728266161
 constants.gd::GDScript::-1::1728266161::0::1::::<>Node<>::
@@ -54,8 +54,8 @@ editor_property_control.gd::GDScript::-1::1728266161::0::1::::<>HBoxContainer<>:
 editor_property_control.tscn::PackedScene::1689506734256736329::1728266161::0::1::::<><>::res://addons/dialogue_manager/components/editor_property/editor_property_control.gd<>uid://b16uuqjuof3n5::::res://addons/dialogue_manager/components/editor_property/resource_button.tscn<>uid://dnufpcdrreva3::::res://addons/dialogue_manager/components/files_list.tscn
 resource_button.gd::GDScript::-1::1728266161::0::1::::<>Button<>::
 resource_button.tscn::PackedScene::4276577239595711888::1728266161::0::1::::<><>::res://addons/dialogue_manager/components/editor_property/resource_button.gd
-::res://addons/dialogue_manager/example_balloon/::1728266161
-example_balloon.gd::GDScript::-1::1728266161::0::1::::DialogueManagerExampleBalloon<>CanvasLayer<>::
+::res://addons/dialogue_manager/example_balloon/::1728348364
+example_balloon.gd::GDScript::-1::1728348364::0::1::::DialogueManagerExampleBalloon<>CanvasLayer<>::
 example_balloon.tscn::PackedScene::2304415056852043862::1728266161::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
 small_example_balloon.tscn::PackedScene::1883859960814163368::1728266161::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
 ::res://addons/dialogue_manager/l10n/::1728266161
@@ -72,20 +72,20 @@ main_view.gd::GDScript::-1::1728266161::0::1::::<>Control<>::
 main_view.tscn::PackedScene::4884668666408697448::1728266161::0::1::::<><>::res://addons/dialogue_manager/views/main_view.gd<>uid://civ6shmka5e8u::::res://addons/dialogue_manager/components/code_edit.tscn<>uid://dnufpcdrreva3::::res://addons/dialogue_manager/components/files_list.tscn<>uid://ctns6ouwwd68i::::res://addons/dialogue_manager/components/title_list.tscn<>uid://co8yl23idiwbi::::res://addons/dialogue_manager/components/update_button.tscn<>uid://gr8nakpbrhby::::res://addons/dialogue_manager/components/search_and_replace.tscn<>uid://cs8pwrxr5vxix::::res://addons/dialogue_manager/components/errors_panel.tscn<>res://addons/dialogue_manager/components/code_edit_syntax_highlighter.gd<>uid://cpg4lg1r3ff6m::::res://addons/dialogue_manager/views/settings_view.tscn<>uid://0n7hwviyyly4::::res://addons/dialogue_manager/components/find_in_files.tscn
 settings_view.gd::GDScript::-1::1728266161::0::1::::<>TabContainer<>::
 settings_view.tscn::PackedScene::5839841081119266502::1728266161::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
-::res://Dialogue/::1728266957
-decisionbox.dialogue::Resource::8845203003609537310::1728266957::1728266957::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-dialogue test.dialogue::Resource::649235765031957973::1728266761::1728266761::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+::res://Dialogue/::1728348531
+decisionbox.dialogue::Resource::8845203003609537310::1728348871::1728348872::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+dialogue test.dialogue::Resource::649235765031957973::1728347236::1728347236::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+reset.dialogue::Resource::7337520838172264916::1728347547::1728347547::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 ::res://Images/::1728266162
 icon.svg::CompressedTexture2D::3083139758856155069::1728266158::1728266162::1::::<><>::
 ::res://Scenes/::1728267047
-::res://Scripts/::1728266448
-DecisonBox.gd::GDScript::-1::1728266275::0::1::::<>Area3D<>::
-global.gd::GDScript::-1::1728266448::0::1::::<>Node<>::
-Godot4FPS.gd::GDScript::-1::1728266161::0::1::::<>CharacterBody3D<>::
+::res://Scripts/::1728348836
+global.gd::GDScript::-1::1728347072::0::1::::<>Node<>::
+Godot4FPS.gd::GDScript::-1::1728299375::0::1::::<>CharacterBody3D<>::
 InteractPrompt.gd::GDScript::-1::1728265300::0::1::::<>Label<>::
-LeftButton.gd::GDScript::-1::1728266432::0::1::::<>Button<>::
-LeftCard.gd::GDScript::-1::1728266158::0::1::::<>Control<>::
-RightButton.gd::GDScript::-1::1728266436::0::1::::<>Button<>::
-RightCard.gd::GDScript::-1::1728266158::0::1::::<>Control<>::
-TalkingBox.gd::GDScript::-1::1728265300::0::1::::<>Area3D<>::
-TalkTemplate.gd::GDScript::-1::1728266161::0::1::::<>Area3D<>::
+LeftButton.gd::GDScript::-1::1728347691::0::1::::<>Button<>::
+LeftCard.gd::GDScript::-1::1728343907::0::1::::<>Control<>::
+RightButton.gd::GDScript::-1::1728347691::0::1::::<>Button<>::
+RightCard.gd::GDScript::-1::1728343907::0::1::::<>Control<>::
+::res://Scripts/Template Scripts/::1728348760
+DecisionTemplate.gd::GDScript::-1::1728347547::0::1::::<>Area3D<>::

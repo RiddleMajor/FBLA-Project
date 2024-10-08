@@ -6,7 +6,6 @@ Box: Yo! I'm a BOX!!
 	You: Uhhhh
 	- *thumbs up*
 		Box: Glad you understand.
-		do global.lunchchoice.emit()
 	- Just put the fries in the bag bro
 		Box: .....
 	

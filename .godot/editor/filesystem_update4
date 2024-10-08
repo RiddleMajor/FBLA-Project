@@ -1,2 +1,8 @@
-res://test (3).tscn
 res://main.tscn
+res://Scripts/DecisonBox.gd
+res://Scripts/global.gd
+res://Scripts/LeftCard.gd
+res://Scripts/RightCard.gd
+res://Scripts/LeftButton.gd
+res://Scripts/RightButton.gd
+res://addons/dialogue_manager/example_balloon/example_balloon.gd
