@@ -8,6 +8,27 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera := $Neck/Camera3d
 @export var speed := 5.0
 
+#HeadBobbing Variables
+const head_bob_sprinting_speed = 22.0
+const head_bob_walking_speed = 14.0
+const head_bob_crouching_speed = 10.0
+
+const head_bob_crouching_intensity = 0.05
+const head_bob_sprinting_intensity = 0.2
+const head_bob_walking_intensity = 0.1
+
+var head_bob_vector = Vector2.ZERO
+var head_bob_index = 0.0
+var head_bob_current_intensity = 0.0
+
+
+
+
+var lerp_speed = 10.0
+
+#States Machine
+var walking := false
+var sprinting := false
 
 var target_camera_y: float
 var original_camera_y: float  # To store the initial position
@@ -33,6 +54,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	#Get direction
+	var input_dir = Input.get_vector("a", "d", "w", "s")
+	
 	if not is_on_floor():
 		velocity.y -= (gravity * delta) + 0.1
 		
@@ -44,12 +69,45 @@ func _physics_process(delta: float) -> void:
 		
 	camera.position.y = lerp(camera.position.y, target_camera_y, 6.0 * delta)
 	
+	
+	
+	# Handle Headbob
+	if sprinting:
+		head_bob_current_intensity = head_bob_sprinting_intensity
+		head_bob_index += head_bob_sprinting_speed * delta
+	elif walking:
+		head_bob_current_intensity = head_bob_walking_intensity
+		head_bob_index += head_bob_walking_speed * delta
+	
+	
+	if is_on_floor() && input_dir != Vector2.ZERO:
+		head_bob_vector.y = sin(head_bob_index)
+		head_bob_vector.x = sin(head_bob_index / 2) + 0.5
+		
+		neck.position.y = lerp(neck.position.y, head_bob_vector.y * (head_bob_current_intensity / 2.0), lerp_speed * delta)
+		neck.position.x = lerp(neck.position.x, head_bob_vector.x * head_bob_current_intensity, lerp_speed * delta)
+	else:
+		neck.position.y = lerp(neck.position.y, 0.0, lerp_speed * delta)
+		neck.position.x = lerp(neck.position.x, 0.0, lerp_speed * delta)
+		
+		
+		
+		
+		
+		
 	if Input.is_action_pressed("shift"):
 		speed = 6.5
-	if Input.is_action_just_released("shift"):
+		walking = false
+		sprinting = true
+	else:
 		speed = 5
+		walking = true
+		sprinting = false
+		
+		
 	if global.decisionmode == 0:
-		var input_dir := Input.get_vector("a", "d", "w", "s")
+		walking = true
+		sprinting = false
 		var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
 			velocity.x = direction.x * speed
@@ -57,6 +115,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			velocity.z = move_toward(velocity.z, 0, speed)
-
+	
+	
+	
+	
+	
+	
+	
 		move_and_slide()
 

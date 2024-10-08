@@ -1,13 +1,2 @@
-res://Scenes/test.tscn
-res://Scenes/LeftCard.gd
-res://Scripts/DecisonBox.gd
-res://Scripts/global.gd
-<<<<<<< Updated upstream
-=======
+res://main.tscn
 res://Scripts/Godot4FPS.gd
-res://Scripts/RightCard.gd
-res://Scenes/LeftButton.gd
-res://Scripts/LeftButton.gd
-res://Scripts/RightButton.gd
-res://Scenes/PlaceHolderLabel.gd
->>>>>>> Stashed changes
