@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=3 uid="uid://jhex24t3iaso"]
+
+[ext_resource type="Texture2D" uid="uid://2kpn5gej6hyb" path="res://Textures/speckled-countertop1-bl/speckled_countertop1_albedo.png" id="1_y52jy"]
+[ext_resource type="Texture2D" uid="uid://cfh4a44l16dkc" path="res://Textures/speckled-countertop1-bl/speckled_countertop1_ao.png" id="2_q8cua"]
+[ext_resource type="Texture2D" uid="uid://ce3ybw7mgpqer" path="res://Textures/speckled-countertop1-bl/speckled_countertop1_Metallic.png" id="3_cl8w4"]
+[ext_resource type="Texture2D" uid="uid://b7jsbj8drl5rj" path="res://Textures/speckled-countertop1-bl/speckled_countertop1_Normal-ogl.png" id="4_jhtq0"]
+[ext_resource type="Texture2D" uid="uid://c2prdeo87obek" path="res://Textures/speckled-countertop1-bl/speckled_countertop1_Roughness.png" id="5_tlk38"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6oc6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5fmx"]
+albedo_texture = ExtResource("1_y52jy")
+metallic = 1.0
+metallic_texture = ExtResource("3_cl8w4")
+roughness_texture = ExtResource("5_tlk38")
+normal_enabled = true
+normal_texture = ExtResource("4_jhtq0")
+ao_enabled = true
+ao_texture = ExtResource("2_q8cua")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2o47k"]
+material = SubResource("StandardMaterial3D_d5fmx")
+
+[node name="MarbleTile" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l6oc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2o47k")
+skeleton = NodePath("")

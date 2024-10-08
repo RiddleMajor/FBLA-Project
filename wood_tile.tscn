@@ -1,0 +1,34 @@
+[gd_scene load_steps=10 format=3 uid="uid://y33kes0i554w"]
+
+[ext_resource type="Texture2D" uid="uid://pal6gv5e14mn" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_albedo.png" id="1_xtkf6"]
+[ext_resource type="Texture2D" uid="uid://cfl2xe2ixoxa3" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_ao.png" id="2_upgvy"]
+[ext_resource type="Texture2D" uid="uid://cq8xy41la1s7o" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_height.png" id="3_gi2d0"]
+[ext_resource type="Texture2D" uid="uid://bt5nn444n2tcx" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_metallic.png" id="4_ctgj0"]
+[ext_resource type="Texture2D" uid="uid://c62g4f35vbhy8" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_normal-ogl.png" id="5_dm1yg"]
+[ext_resource type="Texture2D" uid="uid://x4c638ylg2fu" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_roughness.png" id="6_gjn5b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6oc6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1l4a"]
+albedo_texture = ExtResource("1_xtkf6")
+metallic = 1.0
+metallic_texture = ExtResource("4_ctgj0")
+roughness_texture = ExtResource("6_gjn5b")
+normal_enabled = true
+normal_texture = ExtResource("5_dm1yg")
+ao_enabled = true
+ao_texture = ExtResource("2_upgvy")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_gi2d0")
+
+[sub_resource type="BoxMesh" id="BoxMesh_l0btt"]
+material = SubResource("StandardMaterial3D_p1l4a")
+
+[node name="WoodTile" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l6oc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_l0btt")
+skeleton = NodePath("")
