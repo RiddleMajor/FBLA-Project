@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bf3fjqfxdruql"]
+[gd_scene load_steps=24 format=3 uid="uid://db4xpuee048r8"]
 
 [ext_resource type="Script" path="res://Scripts/InteractPrompt.gd" id="1_mxj12"]
 [ext_resource type="Script" path="res://Scripts/LeftCard.gd" id="2_msh45"]
