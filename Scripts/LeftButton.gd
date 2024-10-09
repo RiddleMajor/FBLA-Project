@@ -21,3 +21,7 @@ func _on_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	await get_tree().create_timer(0.01).timeout
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	global.econTotal += global.LeChange
+	global.foreignTotal += global.LfChange
+	global.publicTotal += global.LpChange
+	

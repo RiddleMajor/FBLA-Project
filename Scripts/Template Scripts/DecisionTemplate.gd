@@ -17,6 +17,14 @@ extends Area3D
 @export var right_line5 := " "
 @export var right_title := " "
 @export var signalname := ""
+@export var LpChange := 0
+@export var LfChange := 0
+@export var LeChange := 0
+@export var RpChange := 0
+@export var RfChange := 0
+@export var ReChange := 0
+
+
 
 func _ready():
 	pass
@@ -28,8 +36,8 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		reset()
 	if global.signalname == signalname:
-		$"../../Control/LeftCard".visible = true
-		$"../../Control/RightCard".visible = true
+		$"../../../../Control/LeftCard".visible = true
+		$"../../../../Control/RightCard".visible = true
 		global.left1 = left_line1
 		global.left2 = left_line2
 		global.left3 = left_line3
@@ -43,6 +51,12 @@ func _process(delta):
 		global.right5 = right_line5
 		global.righttitle = right_title
 		global.decisionmode = 1
+		global.LpChange = LpChange
+		global.LfChange = LfChange
+		global.LeChange = LeChange
+		global.RpChange = RpChange
+		global.RfChange = RfChange
+		global.ReChange = ReChange
 
 
 func reset():

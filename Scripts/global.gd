@@ -22,6 +22,16 @@ var leftimage = "path here"
 var rightimage = "path here"
 
 
+var publicTotal = 50
+var foreignTotal = 50
+var econTotal = 50
+var LpChange = 0
+var LfChange = 0
+var LeChange = 0
+var RpChange = 0
+var RfChange = 0
+var ReChange = 0
+
 var signalname = ""
 
 

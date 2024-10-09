@@ -1,0 +1,355 @@
+[gd_scene load_steps=21 format=3 uid="uid://bf3fjqfxdruql"]
+
+[ext_resource type="Script" path="res://Scripts/InteractPrompt.gd" id="1_hdral"]
+[ext_resource type="Script" path="res://Scripts/LeftCard.gd" id="2_njvgo"]
+[ext_resource type="StyleBox" uid="uid://dygekfpv0rq6m" path="res://redcard.tres" id="3_ympl2"]
+[ext_resource type="Script" path="res://Scripts/LeftButton.gd" id="4_qkjqx"]
+[ext_resource type="Script" path="res://Scripts/RightCard.gd" id="5_2nxi5"]
+[ext_resource type="StyleBox" uid="uid://chy4ruwsrv1j8" path="res://bluecard.tres" id="6_a2fvh"]
+[ext_resource type="Script" path="res://Scripts/RightButton.gd" id="7_r8dvl"]
+[ext_resource type="Script" path="res://Scripts/Template Scripts/DecisionTemplate.gd" id="8_ypysh"]
+[ext_resource type="PackedScene" uid="uid://d3jn85d6l3uqg" path="res://Scenes/player.tscn" id="9_dge7y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03o1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnik6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y66j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a45ka"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkvkj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w3wfv"]
+
+[sub_resource type="Sky" id="Sky_keshh"]
+sky_material = SubResource("ProceduralSkyMaterial_w3wfv")
+
+[sub_resource type="Environment" id="Environment_flucs"]
+background_mode = 2
+sky = SubResource("Sky_keshh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6oc6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2o47k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twnb2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="InteractPrompt" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 0.78
+anchor_right = 0.498
+anchor_bottom = 0.78
+offset_left = -109.696
+offset_top = -17.44
+offset_right = 110.304
+offset_bottom = 17.56
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Press E to Interact"
+script = ExtResource("1_hdral")
+
+[node name="LeftCard" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_njvgo")
+
+[node name="TextureRect" type="TextureRect" parent="Control/LeftCard"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 168.0
+offset_bottom = 168.0
+scale = Vector2(7.97483, 4.7613)
+
+[node name="Panel" type="Panel" parent="Control/LeftCard"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 56.0
+scale = Vector2(11.2, 15.4)
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_ympl2")
+
+[node name="Button" type="Button" parent="Control/LeftCard/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_03o1j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fnik6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2y66j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a45ka")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vkvkj")
+script = ExtResource("4_qkjqx")
+
+[node name="Line1" type="Label" parent="Control/LeftCard"]
+layout_mode = 0
+anchor_left = 0.111111
+anchor_top = 0.592593
+anchor_right = 0.388021
+anchor_bottom = 0.628086
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.641975
+anchor_right = 0.388021
+anchor_bottom = 0.677469
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line3" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.691358
+anchor_right = 0.388021
+anchor_bottom = 0.726852
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line4" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.740741
+anchor_right = 0.388021
+anchor_bottom = 0.776235
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line5" type="Label" parent="Control/LeftCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.790123
+anchor_right = 0.388021
+anchor_bottom = 0.825617
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Control/LeftCard"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 48.0
+offset_right = 459.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+horizontal_alignment = 1
+
+[node name="RightCard" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_2nxi5")
+
+[node name="TextureRect" type="TextureRect" parent="Control/RightCard"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 744.0
+offset_bottom = 168.0
+scale = Vector2(7.97483, 4.7613)
+
+[node name="Panel" type="Panel" parent="Control/RightCard"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 16.0
+offset_right = 680.0
+offset_bottom = 56.0
+scale = Vector2(11.2, 15.4)
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("6_a2fvh")
+
+[node name="Button" type="Button" parent="Control/RightCard/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_03o1j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fnik6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2y66j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a45ka")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vkvkj")
+script = ExtResource("7_r8dvl")
+
+[node name="Line1" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.592593
+anchor_right = 0.388021
+anchor_bottom = 0.628086
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.641975
+anchor_right = 0.388021
+anchor_bottom = 0.677469
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line3" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.691358
+anchor_right = 0.388021
+anchor_bottom = 0.726852
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line4" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.740741
+anchor_right = 0.388021
+anchor_bottom = 0.776235
+offset_left = 576.0
+offset_right = 576.0
+offset_bottom = -3.05176e-05
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line5" type="Label" parent="Control/RightCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.790123
+anchor_right = 0.388021
+anchor_bottom = 0.825617
+offset_left = 576.0
+offset_right = 576.0
+text = "dfjkghbdfhjgbdhfgbjdkfhbgksjdhbgfjkshd"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Control/RightCard"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 56.0
+offset_right = 1042.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+horizontal_alignment = 1
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 0.805111, 0.593124, 0, -0.593124, 0.805111, 0, 3.23897, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_flucs")
+
+[node name="Enviroment" type="Node3D" parent="World"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Enviroment"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D"]
+shape = SubResource("BoxShape3D_l6oc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Enviroment/StaticBody3D"]
+mesh = SubResource("BoxMesh_2o47k")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World/Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43751, 0.946276, -3.79955)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2"]
+shape = SubResource("BoxShape3D_l6oc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Enviroment/StaticBody3D2"]
+mesh = SubResource("BoxMesh_2o47k")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="World/Enviroment/StaticBody3D2"]
+script = ExtResource("8_ypysh")
+path = "res://Dialogue/decisionbox.dialogue"
+left_line1 = " Hamburger"
+left_title = " Hamburger"
+right_line1 = " Pizza"
+right_title = " Pizza"
+signalname = "lunch"
+LpChange = 10
+LfChange = -3
+LeChange = -15
+RpChange = -5
+RfChange = 14
+ReChange = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Enviroment/StaticBody3D2/Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_twnb2")
+
+[node name="Player" parent="World" instance=ExtResource("9_dge7y")]
+
+[connection signal="pressed" from="Control/LeftCard/Panel/Button" to="Control/LeftCard/Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/RightCard/Panel/Button" to="Control/RightCard/Panel/Button" method="_on_pressed"]
+[connection signal="area_entered" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_entered"]
+[connection signal="area_exited" from="World/Enviroment/StaticBody3D2/Area3D" to="World/Enviroment/StaticBody3D2/Area3D" method="_on_area_exited"]

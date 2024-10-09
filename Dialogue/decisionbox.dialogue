@@ -1,14 +1,14 @@
 ~ test
 
-Man: Hello
+Box: Hello
 - Hello
-	Man: What's for lunch?
+	Box: What's for lunch?
 	- *Choose*
 		do global.signalname = "lunch"
 		=> END!
 	- Not sure yet.
 - What do you want?
-	Man: What's for lunch?
+	Box: What's for lunch?
 	- *Choose*
 		do global.signalname = "lunch"
 		=> END!
