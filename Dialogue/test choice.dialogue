@@ -1,0 +1,10 @@
+~ test
+Woman: Hello, this is an example dialogue
+- This is an example response that will trigger a decision
+	do global.signalname = "testchoice"
+- This is an example response that will lead to more dialogue
+	Woman: More example dialogue
+	- This is an example response that will trigger a decision
+		do global.signalname = "testchoice"
+	- This is an example dialogue that will end the conversation
+=> END

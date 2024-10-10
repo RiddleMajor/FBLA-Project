@@ -57,6 +57,7 @@ func _process(delta):
 		global.RpChange = RpChange
 		global.RfChange = RfChange
 		global.ReChange = ReChange
+		
 
 
 func reset():

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b48avp43qfbvt"
+path="res://.godot/imported/test choice.dialogue-81a64ec6637ada62b4c3b471415b9158.tres"
+
+[deps]
+
+source_file="res://Dialogue/test choice.dialogue"
+dest_files=["res://.godot/imported/test choice.dialogue-81a64ec6637ada62b4c3b471415b9158.tres"]
+
+[params]
+
+defaults=true

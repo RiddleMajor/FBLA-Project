@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c2w1r2tvm6imj"
+path="res://.godot/imported/afterfood.dialogue-98f23f6301ff5ea7347830fc6f379d2a.tres"
+
+[deps]
+
+source_file="res://Dialogue/afterfood.dialogue"
+dest_files=["res://.godot/imported/afterfood.dialogue-98f23f6301ff5ea7347830fc6f379d2a.tres"]
+
+[params]
+
+defaults=true
