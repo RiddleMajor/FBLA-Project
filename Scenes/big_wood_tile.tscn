@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyg7m28i7lcjp"]
+
+[ext_resource type="PackedScene" uid="uid://y33kes0i554w" path="res://Scenes/wood_tile.tscn" id="1_vu7ku"]
+
+[node name="BigWoodTile" type="Node3D"]
+
+[node name="WoodTile" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+
+[node name="WoodTile2" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="WoodTile3" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
+
+[node name="WoodTile4" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="WoodTile5" parent="." instance=ExtResource("1_vu7ku")]
+
+[node name="WoodTile6" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="WoodTile7" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="WoodTile8" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="WoodTile9" parent="." instance=ExtResource("1_vu7ku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)

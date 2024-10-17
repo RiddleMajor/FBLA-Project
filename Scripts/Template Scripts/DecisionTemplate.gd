@@ -23,13 +23,14 @@ extends Area3D
 @export var RpChange := 0
 @export var RfChange := 0
 @export var ReChange := 0
-
+@export var npcpath := "World/Enviroment/Man1/Center"
 
 
 func _ready():
-	pass
+	global.npcpath = npcpath
 func _process(delta):
 	if Input.is_action_pressed("e") and interact == 1:
+		global.decisionmode = 1
 		global.promptvisible = 0
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/reset.dialogue"), "reset")
 		DialogueManager.show_dialogue_balloon(load(path), title)

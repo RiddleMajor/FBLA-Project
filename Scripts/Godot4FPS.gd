@@ -2,17 +2,15 @@ extends CharacterBody3D
 
 const JUMP_VELOCITY = 4.5
 
-# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3d
 @export var speed := 5.0
 
-#HeadBobbing Variables
 const head_bob_sprinting_speed = 22.0
 const head_bob_walking_speed = 14.0
 const head_bob_crouching_speed = 10.0
-
 const head_bob_crouching_intensity = 0.05
 const head_bob_sprinting_intensity = 0.2
 const head_bob_walking_intensity = 0.1
@@ -21,25 +19,46 @@ var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0
 var head_bob_current_intensity = 0.0
 
-
+var target_node: Node3D
+var smooth_rotation_speed := 3.0
 
 
 var lerp_speed = 10.0
 
-#States Machine
 var walking := false
 var sprinting := false
 
 var target_camera_y: float
-var original_camera_y: float  # To store the initial position
+var original_camera_y: float
+var original_neck_rotation_x: float
+
 
 func _ready():
-	original_camera_y = camera.position.y  # Save the initial Y position
-	target_camera_y = camera.position.y  # Initialize target Y position
+	original_camera_y = camera.position.y
+	target_camera_y = camera.position.y 
+	target_node = get_tree().get_root().get_node("Node3D/" + global.npcpath)
+	original_neck_rotation_x = neck.rotation.y
 	
 func _process(delta):
 	if global.decisionmode == 1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		var target_dir = (target_node.global_transform.origin - neck.global_transform.origin).normalized()
+		var current_transform = neck.global_transform.basis
+		var target_transform = Basis().looking_at(target_dir, Vector3.UP)
+		var interpolated_transform = current_transform.slerp(target_transform, smooth_rotation_speed * delta)
+		neck.global_transform.basis = interpolated_transform
+		var camera_target_dir = target_dir
+		camera_target_dir.y = 0
+		camera_target_dir = camera_target_dir.normalized()
+		var camera_up = Vector3.UP
+		var camera_pitch_transform = Basis().looking_at(camera_target_dir, camera_up)
+		var current_camera_transform = camera.global_transform.basis
+		var interpolated_camera_transform = current_camera_transform.slerp(camera_pitch_transform, smooth_rotation_speed * delta)
+		camera.global_transform.basis = interpolated_camera_transform
+	if global.leftclicked == 1:
+		var current_rotation = neck.rotation
+		current_rotation.x = lerp(current_rotation.x, original_neck_rotation_x, smooth_rotation_speed * delta)
+		neck.rotation = current_rotation
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -54,24 +73,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
-	#Get direction
 	var input_dir = Input.get_vector("a", "d", "w", "s")
-	
 	if not is_on_floor():
 		velocity.y -= (gravity * delta) + 0.1
-		
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		target_camera_y -= 0.3
 		await get_tree().create_timer(0.1).timeout
 		target_camera_y = original_camera_y
 		velocity.y = JUMP_VELOCITY
-		
 	camera.position.y = lerp(camera.position.y, target_camera_y, 6.0 * delta)
-	
-	
-	
-	# Handle Headbob
+
+
 	if sprinting:
 		head_bob_current_intensity = head_bob_sprinting_intensity
 		head_bob_index += head_bob_sprinting_speed * delta

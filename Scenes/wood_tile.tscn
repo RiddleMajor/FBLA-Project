@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://y33kes0i554w"]
+
+[ext_resource type="Shader" path="res://Shaders/wood.gdshader" id="1_htdvr"]
+[ext_resource type="Texture2D" uid="uid://pal6gv5e14mn" path="res://Textures/older-wood-flooring-bl/older-wood-flooring_albedo.png" id="1_xtkf6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6oc6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mtw8"]
+render_priority = 0
+shader = ExtResource("1_htdvr")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_xtkf6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1wl8"]
+material = SubResource("ShaderMaterial_1mtw8")
+
+[node name="WoodTile" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l6oc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_d1wl8")

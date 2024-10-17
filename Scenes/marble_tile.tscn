@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://jhex24t3iaso"]
+
+[ext_resource type="Shader" path="res://Shaders/jitter.gdshader" id="1_ndvnl"]
+[ext_resource type="Texture2D" uid="uid://2kpn5gej6hyb" path="res://Textures/speckled-countertop1-bl/speckled_countertop1_albedo.png" id="1_y52jy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6oc6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grjvt"]
+render_priority = 0
+shader = ExtResource("1_ndvnl")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_y52jy")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2o47k"]
+material = SubResource("ShaderMaterial_grjvt")
+
+[node name="MarbleTile" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l6oc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2o47k")
+skeleton = NodePath("")
