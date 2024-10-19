@@ -36,10 +36,10 @@ var original_neck_rotation_x: float
 func _ready():
 	original_camera_y = camera.position.y
 	target_camera_y = camera.position.y 
-	target_node = get_tree().get_root().get_node("Node3D/" + global.npcpath)
 	original_neck_rotation_x = neck.rotation.y
 	
 func _process(delta):
+	target_node = get_tree().get_root().get_node("Node3D/" + global.npcpath)
 	if global.decisionmode == 1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		var target_dir = (target_node.global_transform.origin - neck.global_transform.origin).normalized()

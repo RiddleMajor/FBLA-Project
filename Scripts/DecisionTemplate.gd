@@ -16,7 +16,7 @@ extends Area3D
 @export var right_line4 := " "
 @export var right_line5 := " "
 @export var right_title := " "
-@export var signalname := ""
+@export var signalname := "empty"
 @export var LpChange := 0
 @export var LfChange := 0
 @export var LeChange := 0
@@ -28,9 +28,12 @@ extends Area3D
 
 func _ready():
 	global.npcpath = npcpath
+	print(global.npcpath)
 func _process(delta):
+	print(global.npcpath)
 	if Input.is_action_pressed("e") and interact == 1:
 		global.npcpath = npcpath
+		print(global.npcpath)
 		global.decisionmode = 1
 		global.promptvisible = 0
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/reset.dialogue"), "reset")
@@ -38,8 +41,6 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		reset()
 	if global.signalname == signalname:
-		$"../../../../Control/LeftCard".visible = true
-		$"../../../../Control/RightCard".visible = true
 		global.left1 = left_line1
 		global.left2 = left_line2
 		global.left3 = left_line3
@@ -52,7 +53,6 @@ func _process(delta):
 		global.right4 = right_line4
 		global.right5 = right_line5
 		global.righttitle = right_title
-		global.decisionmode = 1
 		global.LpChange = LpChange
 		global.LfChange = LfChange
 		global.LeChange = LeChange

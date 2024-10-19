@@ -21,7 +21,7 @@ var righttitle = "example"
 var leftimage = "path here"
 var rightimage = "path here"
 
-var npcpath = TYPE_STRING
+var npcpath = ""
 
 var publicTotal = 50
 var foreignTotal = 50
